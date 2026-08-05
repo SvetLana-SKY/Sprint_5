@@ -15,11 +15,13 @@ class TestRegistration:
         reg_link = wait.until(EC.element_to_be_clickable(EnterPageLocators.REGISTRATION_LINK))
         reg_link.click()
 
+        email = rendom_data[0]
+        password = rendom_data[1]
         
         wait.until(EC.visibility_of_element_located(RegistrationPageLocators.NAME_INPUT))
         driver.find_element(*RegistrationPageLocators.NAME_INPUT).send_keys("Svetlana")
-        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys(rendom_data ["email"])
-        driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys(rendom_data["password"])
+        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys(email)
+        driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys(password)
         driver.find_element(*RegistrationPageLocators.REGISTRATION_BUTTON).click()
 
         auth_page = driver.find_element(*EnterPageLocators.AUTH_PAGE)
@@ -37,10 +39,11 @@ class TestRegistration:
         reg_link = wait.until(EC.element_to_be_clickable(EnterPageLocators.REGISTRATION_LINK))
         reg_link.click()
         
+        email = rendom_data[0]
                 
         wait.until(EC.visibility_of_element_located(RegistrationPageLocators.NAME_INPUT))
         driver.find_element(*RegistrationPageLocators.NAME_INPUT).send_keys("Svetlana")
-        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys(rendom_data ["email"])
+        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys(email)
         driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys("111")
         driver.find_element(*RegistrationPageLocators.REGISTRATION_BUTTON).click()
 
