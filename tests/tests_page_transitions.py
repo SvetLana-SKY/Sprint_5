@@ -1,4 +1,4 @@
-from tests.locators import MainPageLocators, RegistrationPageLocators, EnterPageLocators, Authorization
+from tests.locators import MainPageLocators, EnterPageLocators, Authorization
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 

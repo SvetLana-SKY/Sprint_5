@@ -9,3 +9,11 @@ def driver():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     yield driver          
     driver.quit()  
+
+@pytest.fixture
+def auth_data():
+    return {
+        "name": "Svetlana",
+        "email": "svetlana_51@ya.ru",
+        "password": "111111",
+    }
