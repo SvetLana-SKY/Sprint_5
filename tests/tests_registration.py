@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class TestRegistration:
-    def test_successful_registration(self, driver):
+    def test_successful_registration(self, driver, rendom_data):
         driver.get("https://stellarburgers.education-services.ru/")
 
         # Найти кнопку "Личный кабинет" и кликнуть по ней
@@ -18,14 +18,14 @@ class TestRegistration:
         
         wait.until(EC.visibility_of_element_located(RegistrationPageLocators.NAME_INPUT))
         driver.find_element(*RegistrationPageLocators.NAME_INPUT).send_keys("Svetlana")
-        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys("svetlana_51@ya.ru")
-        driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys("111111")
+        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys(rendom_data ["email"])
+        driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys(rendom_data["password"])
         driver.find_element(*RegistrationPageLocators.REGISTRATION_BUTTON).click()
 
         auth_page = driver.find_element(*EnterPageLocators.AUTH_PAGE)
         assert auth_page.is_displayed()
 
-    def test_error_registration(self, driver):
+    def test_error_registration(self, driver, rendom_data):
         driver.get("https://stellarburgers.education-services.ru/")
         
                 # Найти кнопку "Личный кабинет" и кликнуть по ней
@@ -40,7 +40,7 @@ class TestRegistration:
                 
         wait.until(EC.visibility_of_element_located(RegistrationPageLocators.NAME_INPUT))
         driver.find_element(*RegistrationPageLocators.NAME_INPUT).send_keys("Svetlana")
-        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys("svetlana_51@ya.ru")
+        driver.find_element(*RegistrationPageLocators.EMAIL_INPUT).send_keys(rendom_data ["email"])
         driver.find_element(*RegistrationPageLocators.PASSWORD_INPUT).send_keys("111")
         driver.find_element(*RegistrationPageLocators.REGISTRATION_BUTTON).click()
 
