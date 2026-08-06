@@ -12,7 +12,7 @@ class TestConstructors:
         driver.find_element(*MainPageLocators.BUNS_TUB).click()
 
         buns = wait.until(EC.visibility_of_element_located(MainPageLocators. BUNS_TUB_CLICK))
-        assert buns.is_displayed()
+        assert "tab_tab_type_current" in buns.get_attribute("class")
 
 
     def test_navigate_to_sauces(self, driver):
@@ -23,7 +23,7 @@ class TestConstructors:
         
     
         souces = wait.until(EC.visibility_of_element_located(MainPageLocators.SAUCES_TUB_CLICK))
-        assert souces.is_displayed()
+        assert "tab_tab_type_current" in souces.get_attribute("class")
 
     def test_navigate_to_fillings(self, driver):
         driver.get("https://stellarburgers.education-services.ru/")
@@ -33,5 +33,5 @@ class TestConstructors:
         
     
         fillings = wait.until(EC.visibility_of_element_located(MainPageLocators.FILLINGS_TUB_CLICK))
-        assert fillings.is_displayed()
+        assert "tab_tab_type_current" in fillings.get_attribute("class")
     

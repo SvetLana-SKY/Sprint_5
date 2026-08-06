@@ -14,9 +14,9 @@ class MainPageLocators:
     SAUCES = (By.XPATH, "//h2[text()='Соусы']")  # Заголовок "Соусы" в ленте
     FILLINGS_TUB = (By.XPATH, "//span[text()='Начинки']")  # Раздел конструктора "Начинки"
     FILLINGS = (By.XPATH, "//h2[text()='Начинки']")  # Заголовок "Начинки" в ленте
-    BUNS_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Булки')]") # Активный раздел "Булки"
-    SAUCES_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Соусы')]") # Активный раздел "Соусы"
-    FILLINGS_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Начинки')]") # Активный раздел "Начинки"
+    BUNS_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current') and contains(., 'Булки')]") # Активный раздел "Булки"
+    SAUCES_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current') and contains(., 'Соусы')]") # Активный раздел "Соусы"
+    FILLINGS_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current') and contains(., 'Начинки')]") # Активный раздел "Начинки"
 
 class EnterPageLocators:
     REGISTRATION_LINK = (By.XPATH, "//a[text() = 'Зарегистрироваться']") #ссылка "Зарегистрироваться"
