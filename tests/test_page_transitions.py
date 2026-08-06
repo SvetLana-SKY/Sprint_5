@@ -33,27 +33,27 @@ class TestPageTransitions:
         constructor.click()
 
         constructor_page = wait.until(EC.visibility_of_element_located(MainPageLocators.CONSTRUCTOR_PAGE))
-        constructor_page.is_displayed()
+        assert constructor_page.is_displayed()
 
 
     def  test_redirect_from_personal_account_to_stellar_burgers(self, driver, auth_data):
-            driver.get("https://stellarburgers.education-services.ru/")
+        driver.get("https://stellarburgers.education-services.ru/")
                 
             # Найти кнопку "личный кабинет" и кликнуть по ней
-            wait = WebDriverWait(driver, 5)
-            cabinet_btn = wait.until(EC.element_to_be_clickable(MainPageLocators.PERSONAL_ACCOUNT_BUTTON))
-            cabinet_btn.click()
+        wait = WebDriverWait(driver, 5)
+        cabinet_btn = wait.until(EC.element_to_be_clickable(MainPageLocators.PERSONAL_ACCOUNT_BUTTON))
+        cabinet_btn.click()
             
-            driver.find_element(*Authorization.EMAIL).send_keys(auth_data["email"])
-            driver.find_element(*Authorization.PASSWORD).send_keys(auth_data["password"])
-            driver.find_element(*Authorization.BUTTON_ENTER).click()
+        driver.find_element(*Authorization.EMAIL).send_keys(auth_data["email"])
+        driver.find_element(*Authorization.PASSWORD).send_keys(auth_data["password"])
+        driver.find_element(*Authorization.BUTTON_ENTER).click()
     
             # Найти кнопку "Логотип" и кликнуть по ней
-            logo = wait.until(EC.element_to_be_clickable(MainPageLocators.LOGOTIPE))
-            logo.click()
+        logo = wait.until(EC.element_to_be_clickable(MainPageLocators.LOGOTIPE))
+        logo.click()
     
-            constructor_page = wait.until(EC.visibility_of_element_located(MainPageLocators.CONSTRUCTOR_PAGE))
-            constructor_page.is_displayed()
+        constructor_page = wait.until(EC.visibility_of_element_located(MainPageLocators.CONSTRUCTOR_PAGE))
+        assert constructor_page.is_displayed()
 
 
     def test_logout_button_in_personal_cabinet(self, driver, auth_data):

@@ -11,7 +11,7 @@ class TestConstructors:
         driver.find_element(*MainPageLocators.SAUCES_TUB).click()
         driver.find_element(*MainPageLocators.BUNS_TUB).click()
 
-        buns = wait.until(EC.visibility_of_element_located(MainPageLocators.BUNS))
+        buns = wait.until(EC.visibility_of_element_located(MainPageLocators. BUNS_TUB_CLICK))
         assert buns.is_displayed()
 
 
@@ -22,7 +22,7 @@ class TestConstructors:
         driver.find_element(*MainPageLocators.SAUCES_TUB).click()
         
     
-        souces = wait.until(EC.visibility_of_element_located(MainPageLocators.SAUCES))
+        souces = wait.until(EC.visibility_of_element_located(MainPageLocators.SAUCES_TUB_CLICK))
         assert souces.is_displayed()
 
     def test_navigate_to_fillings(self, driver):
@@ -32,6 +32,6 @@ class TestConstructors:
         driver.find_element(*MainPageLocators.FILLINGS_TUB).click()
         
     
-        fillings = wait.until(EC.visibility_of_element_located(MainPageLocators.FILLINGS))
+        fillings = wait.until(EC.visibility_of_element_located(MainPageLocators.FILLINGS_TUB_CLICK))
         assert fillings.is_displayed()
     

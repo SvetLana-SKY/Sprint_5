@@ -8,13 +8,15 @@ class MainPageLocators:
     CONSTRUCTOR_PAGE = (By.XPATH, "//button[text()='Оформить заказ']")  # Страница конструктора
     CONSTRUCTOR_LINK = (By.XPATH, "//p[text() = 'Конструктор']")  # "Конструктор"
     LOGOTIPE = (By.CSS_SELECTOR, 'svg[width="290"][height="50"]') # "логотип"
-    BUNS_TUB = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[1]')  # Раздел конструктора "Булки"
+    BUNS_TUB = (By.XPATH, "//span[text()='Булки']")  # Раздел конструктора "Булки"
     BUNS = (By.XPATH, "//h2[text()='Булки']")  # Заголовок "Булки" в ленте
-    SAUCES_TUB = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[2]')  # Раздел конструктора "Соусы"
+    SAUCES_TUB = (By.XPATH, "//span[text()='Соусы']")  # Раздел конструктора "Соусы"
     SAUCES = (By.XPATH, "//h2[text()='Соусы']")  # Заголовок "Соусы" в ленте
-    FILLINGS_TUB = (By.XPATH, '//*[@id="root"]/div/main/section[1]/div[1]/div[3]')  # Раздел конструктора "Начинки"
+    FILLINGS_TUB = (By.XPATH, "//span[text()='Начинки']")  # Раздел конструктора "Начинки"
     FILLINGS = (By.XPATH, "//h2[text()='Начинки']")  # Заголовок "Начинки" в ленте
-
+    BUNS_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Булки')]") # Активный раздел "Булки"
+    SAUCES_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Соусы')]") # Активный раздел "Соусы"
+    FILLINGS_TUB_CLICK = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Начинки')]") # Активный раздел "Начинки"
 
 class EnterPageLocators:
     REGISTRATION_LINK = (By.XPATH, "//a[text() = 'Зарегистрироваться']") #ссылка "Зарегистрироваться"
